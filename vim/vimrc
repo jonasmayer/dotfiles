@@ -24,7 +24,9 @@ Plugin 'groenewege/vim-less'
 Plugin 'kien/ctrlp.vim'
 Plugin 'nanotech/jellybeans.vim'
 Plugin 'Yggdroot/indentLine'
-Plugin 'chriskempson/vim-tomorrow-theme'
+Plugin 'altercation/vim-colors-solarized'
+Plugin 'godlygeek/csapprox'
+
 
 call vundle#end()
 
@@ -37,13 +39,18 @@ filetype plugin indent on " detect filetypes
 autocmd FileType make setlocal noexpandtab " use tabs to indent Makefile
 autocmd FileType ruby setlocal ts=2 sw=2 " use two spaces to indent ruby code
 au BufRead,BufNewFile *.pddl setfiletype lisp
+autocmd vimenter * NERDTree
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Themes and Colors                                                           "
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
-set t_Co=256 " use 256 colors
-colorscheme Tomorrow-Night-Bright
+syntax on
+colorscheme solarized
+set t_Co=16 " xunxo solarized
+let g:solarized_termtrans = 1 " solarized
+let g:solarized_termcolors=16 " solarized
+set background=dark " solarized
 syntax enable " enable syntax highlight
 set laststatus=2
 
