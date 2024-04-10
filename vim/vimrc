@@ -4,6 +4,16 @@
 
 set nocompatible " remove Vi compatibility
 
+
+" Use the OS clipboard by default (on versions compiled with `+clipboard`)
+set clipboard^=unnamed,unnamedplus
+
+" Enhance command-line completion
+set wildmenu
+set wildmode=longest:full,full
+
+
+
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Vundle & Plugins                                                             "
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -26,6 +36,8 @@ Plugin 'nanotech/jellybeans.vim'
 Plugin 'Yggdroot/indentLine'
 Plugin 'altercation/vim-colors-solarized'
 Plugin 'godlygeek/csapprox'
+Plugin 'leafgarland/typescript-vim'
+Plugin 'maxmellon/vim-jsx-pretty'
 
 
 call vundle#end()

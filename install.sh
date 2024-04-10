@@ -1,15 +1,20 @@
 #!/bin/bash
 
-DIR=~/dotfiles
+# Define the directory containing dotfiles
+DOTFILES_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 
 install_zsh() {
-    ln -fs $DIR/zsh/zshrc ~/.zshrc
+    echo "Installing Zsh configurations..."
+    ln -fs "$DOTFILES_DIR/zsh/zshrc" "$HOME/.zshrc"
+    echo "Zsh configurations installed."
 }
 
 install_vim() {
-    rm ~/.vim -f
-    ln -fs $DIR/vim ~/.vim
-    ln -fs $DIR/vimrc ~/.vimrc
+    echo "Installing Vim configurations..."
+    rm -rf "$HOME/.vim"
+    ln -fs "$DOTFILES_DIR/vim" "$HOME/.vim"
+    ln -fs "$DOTFILES_DIR/vimrc" "$HOME/.vimrc"
+    echo "Vim configurations installed."
 }
 
 install() {
